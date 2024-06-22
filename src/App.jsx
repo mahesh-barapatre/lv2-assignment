@@ -32,9 +32,9 @@ const JobApplicationForm = () => {
   const skillsOptions = ['JavaScript', 'CSS', 'Python', 'React', 'Node.js', 'Django'];
 
   return (
-    <div className='w-full h-full flex flex-col sm:flex-row bg-blue-50'>
+    <div className='w-full h-full flex flex-col sm:flex-row bg-blue-50 p-3'>
 
-    <div className="w-3/4 flex h-full flex-col items-center justify-center">
+    <div className="w-full sm:w-3/4 flex h-full flex-col items-center justify-center">
       <h1 className='text-4xl font-extrabold font-mono text-blue-600'>
       {
         !isSubmitted ? "Job Application Form" : "Application Summary"
@@ -43,7 +43,7 @@ const JobApplicationForm = () => {
     </h1>
       {!isSubmitted ? (
         <form className='w-full' onSubmit={(e) => handleSubmit(e, submitForm)}>
-          <div className='flex w-full justify-evenly'>
+          <div className='flex flex-col sm:flex-row w-full justify-evenly'>
           <div>
           <FormFields 
             fieldName={"Name"}
@@ -135,7 +135,7 @@ const JobApplicationForm = () => {
 
           <div className="m-1 p-1">
             <label className="text-lg">Preferred Interview Time:</label>
-            <div className='flex justify-evenly space-x-2'>
+            <div className='flex justify-evenly space-x-1'>
             <Icon icon={"marketeq:date-alt-check"} width={36} className='rounded-full'/>
             <input
               type="datetime-local"
@@ -165,7 +165,7 @@ const JobApplicationForm = () => {
       )}
     </div>
 
-    <div className="w-1/2 flex flex-col justify-evenly min-h-screen items-center">
+    <div className="w-full sm:w-1/2 flex flex-col justify-evenly sm:min-h-screen items-center">
       <img src="https://factohr-1a56a.kxcdn.com/wp-content/themes/factohr-theme/images/blog/top-job-portal/1-Top-job-portals-in-India.png" alt="img"/>
     </div>
 
