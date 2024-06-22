@@ -26,6 +26,7 @@ const JobApplicationForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const submitForm = () => {
+    console.log('submitForm');
     setIsSubmitted(true);
   };
 
@@ -131,7 +132,7 @@ const JobApplicationForm = () => {
             selectedOptions={formData.additionalSkills}
             onChange={handleChange}
           />
-          {errors.additionalSkills && <span className="text-red-500 text-sm font-bold">{errors.additionalSkills}</span>}
+          {errors.additionalSkills && <span className="text-red-500 text-sm font-bold">{errors.additionalSkills}*</span>}
 
           <div className="m-1 p-1">
             <label className="text-lg">Preferred Interview Time:</label>
@@ -146,7 +147,7 @@ const JobApplicationForm = () => {
             />
 
             </div>
-            {errors.interviewTime && <span className="text-red-500 text-sm font-bold">{errors.interviewTime}</span>}
+            {errors.interviewTime && <span className="text-red-500 text-sm font-bold">{errors.interviewTime}*</span>}
           </div>
 
             </div>
