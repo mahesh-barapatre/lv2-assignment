@@ -21,8 +21,10 @@ const useFormValidation = (initialState, validate) => {
 
   const handleSubmit = (e, callback) => {
     e.preventDefault();
+    // console.log(formData);
     const validationErrors = validate(formData);
     setErrors(validationErrors);
+    // console.log(validationErrors);
     if (Object.keys(validationErrors).length === 0) {
       callback();
     }

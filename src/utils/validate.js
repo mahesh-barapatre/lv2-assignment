@@ -12,12 +12,12 @@ const validate = (formData) => {
     } else if (isNaN(formData.phoneNumber)) {
       formErrors.phoneNumber = 'Phone Number must be a valid number';
     } else if (formData.phoneNumber.length !== 10) {
-      formErrors.phoneNumber = 'Phone Number must be a 10 digit number';
+      formErrors.phoneNumber = 'must be a 10 digit number';
     } 
     if ((formData.position === 'Developer' || formData.position === 'Designer') && !formData.experience) {
       formErrors.experience = 'Relevant Experience is required';
-    } else if (isNaN(formData.experience) || formData.experience <= 0) {
-      formErrors.experience = 'Relevant Experience must be a number greater than 0';
+    } else if ((formData.position === 'Developer' || formData.position === 'Designer') && (isNaN(formData.experience) || formData.experience <= 0)) {
+      formErrors.experience = 'must be a number greater than 0';
     }
     if (formData.position === 'Designer' && !formData.portfolio) {
       formErrors.portfolio = 'Portfolio URL is required';
