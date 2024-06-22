@@ -11,7 +11,9 @@ const validate = (formData) => {
       formErrors.phoneNumber = 'Phone Number is required';
     } else if (isNaN(formData.phoneNumber)) {
       formErrors.phoneNumber = 'Phone Number must be a valid number';
-    }
+    } else if (formData.phoneNumber.length !== 10) {
+      formErrors.phoneNumber = 'Phone Number must be a 10 digit number';
+    } 
     if ((formData.position === 'Developer' || formData.position === 'Designer') && !formData.experience) {
       formErrors.experience = 'Relevant Experience is required';
     } else if (isNaN(formData.experience) || formData.experience <= 0) {
